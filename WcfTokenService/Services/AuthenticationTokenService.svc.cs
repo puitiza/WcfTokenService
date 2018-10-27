@@ -4,6 +4,7 @@
     using System.ServiceModel;
     using System.ServiceModel.Activation;
     using WcfTokenService.Business;
+    using WcfTokenService.Database;
     using WcfTokenService.Interfaces;
     using WcfTokenService.Model;
 
@@ -12,10 +13,13 @@
     {
         public string Authenticate(Credentials creds)
         {
-            ICredentialsValidator validator = new CodeExampleCredentialsValidator();
-            if (validator.IsValid(creds))
-                return new CodeExampleTokenBuilder().Build(creds);
-            throw new InvalidCredentialException("Invalid credentials");
+            using (var dbContext = new BasicTokenDbContext())
+            {
+                ICredentialsValidator validator = new DatabaseCredentialsValidator(dbContext);
+                if (validator.IsValid(creds))
+                    return new DatabaseTokenBuilder(dbContext).Build(creds);
+                throw new InvalidCredentialException("Invalid credentials");
+            }
         }
 
     }
