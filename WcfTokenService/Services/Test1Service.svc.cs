@@ -1,22 +1,16 @@
 ﻿namespace WcfTokenService.Services
 {
     using System.ServiceModel.Activation;
-    using System.Web;
-    using WcfTokenService.Business;
-    using WcfTokenService.Database;
-    using WcfTokenService.Interfaces;
+    using System.ServiceModel.Web;
 
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class Test1Service : ITest1Service
     {
         public string Test()
         {
-            var token = HttpContext.Current.Request.Headers["Token"]; // This works whether aspNetCompatibilityEnabled is true of false.
-            using (var dbContext = new BasicTokenDbContext())
-            {
-                ITokenValidator validator = new DatabaseTokenValidator(dbContext);
-                return validator.IsValid(token) ? "Your token worked!" : "Your token failed!";
-            }
+            return string.Format("Your token worked! User: {0} User Id: {1}",
+            WebOperationContext.Current.IncomingRequest.Headers["UserId"],
+            WebOperationContext.Current.IncomingRequest.Headers["User"]);
         }
     }
 }

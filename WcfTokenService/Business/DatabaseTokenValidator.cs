@@ -29,5 +29,6 @@
             return span.TotalSeconds > DefaultSecondsUntilTokenExpires;
         }
 
+        public Token Token { get; set; }
     }
 }

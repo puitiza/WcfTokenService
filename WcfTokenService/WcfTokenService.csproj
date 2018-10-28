@@ -83,6 +83,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\TokenValidationBehaviorExtension.cs" />
+    <Compile Include="Behaviors\TokenValidationInspector.cs" />
+    <Compile Include="Behaviors\TokenValidationServiceBehavior.cs" />
     <Compile Include="Business\DatabaseCredentialsValidator.cs" />
     <Compile Include="Business\DatabaseTokenBuilder.cs" />
     <Compile Include="Business\DatabaseTokenValidator.cs" />
