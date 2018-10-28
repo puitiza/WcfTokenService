@@ -1,9 +1,6 @@
 namespace WcfTokenService.Database
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
     public partial class BasicTokenDbContext : DbContext
     {
@@ -18,7 +15,7 @@ namespace WcfTokenService.Database
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
-                .HasMany(e => e.Token)
+                .HasMany(e => e.Tokens)
                 .WithRequired(e => e.User)
                 .WillCascadeOnDelete(false);
         }

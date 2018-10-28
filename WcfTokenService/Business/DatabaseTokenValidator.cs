@@ -19,8 +19,8 @@
 
         public bool IsValid(string tokentext)
         {
-            var token = _DbContext.Tokens.SingleOrDefault(t => t.Text == tokentext);
-            return token != null && !IsExpired(token);
+            Token = _DbContext.Tokens.SingleOrDefault(t => t.Text == tokentext);
+            return Token != null && !IsExpired(Token);
         }
 
         internal bool IsExpired(Token token)

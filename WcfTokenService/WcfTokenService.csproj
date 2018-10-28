@@ -17,7 +17,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44304</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -76,6 +76,14 @@
     <Content Include="App_Data\BasicTokenDatabase_log.ldf">
       <DependentUpon>BasicTokenDatabase.mdf</DependentUpon>
     </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\knockout-3.4.2.debug.js" />
+    <Content Include="Scripts\knockout-3.4.2.js" />
+    <Content Include="TestPage\Index.html" />
     <Content Include="Services\AuthenticationTokenService.svc" />
     <Content Include="Services\Test1Service.svc" />
     <Content Include="Web.config">
@@ -86,6 +94,7 @@
     <Compile Include="Behaviors\TokenValidationBehaviorExtension.cs" />
     <Compile Include="Behaviors\TokenValidationInspector.cs" />
     <Compile Include="Behaviors\TokenValidationServiceBehavior.cs" />
+    <Compile Include="Business\BasicAuth.cs" />
     <Compile Include="Business\DatabaseCredentialsValidator.cs" />
     <Compile Include="Business\DatabaseTokenBuilder.cs" />
     <Compile Include="Business\DatabaseTokenValidator.cs" />
@@ -93,6 +102,7 @@
     <Compile Include="Database\BasicTokenDbContext.cs" />
     <Compile Include="Database\Token.cs" />
     <Compile Include="Database\User.cs" />
+    <Compile Include="Extensions\NameValueCollectionExtensions.cs" />
     <Compile Include="Interfaces\ICredentialsValidator.cs" />
     <Compile Include="Interfaces\ITokenBuilder.cs" />
     <Compile Include="Interfaces\ITokenValidator.cs" />
@@ -110,6 +120,8 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
