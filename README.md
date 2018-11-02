@@ -1,5 +1,5 @@
 # WcfTokenService
-Este proyecto es para manejar y generar los Token para el nivel de seguridad, aunque aún sigue siendo Basic Authentication para las autorizaciones
+Este proyecto es para manejar y generar los Token para el nivel de seguridad, aunque aún sigue siendo Basic Authentication para las autorizaciones. El proyecto esta divido en ramas porque, no quiero que se confundan asi mejor vez progresivamente el avance del proyecto
 
 1. Probar en Postman
 > Creo que es uno de las mejores herramientas para probar tus WebServices REST.  
